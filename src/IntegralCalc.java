@@ -4,18 +4,18 @@ public class IntegralCalc implements AM {
 
     @Override
     public void run(AMInfo info) {
-        double a = 0;
-        double b = 10;
-        int n = 1000000000;
+
+        double a = info.parent.readDouble();
+        double b = info.parent.readDouble();
+        int n = 1000000000 / 100000;
 
         double h = (b - a) / n;
 
         double integralSum = 0.0;
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             double x = a + i * h;
-            double fx = f(x);
-            integralSum += fx;
+            integralSum += f(x);;
         }
 
         double integralResult = h * ((f(a) + f(b)) / 2 + integralSum);
