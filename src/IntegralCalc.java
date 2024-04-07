@@ -5,8 +5,9 @@ public class IntegralCalc implements AM {
     @Override
     public void run(AMInfo info) {
 
-        double a = info.parent.readDouble();
-        double b = info.parent.readDouble();
+        Interval interval = (Interval)info.parent.readObject();
+        double a = interval.a;
+        double b = interval.b;
         int n = 1000000000 / 100000;
 
         double h = (b - a) / n;

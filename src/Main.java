@@ -22,8 +22,7 @@ public class Main {
             double subrangeB = subrangeA + step;
             
             points[i].execute("IntegralCalc");
-            channels[i].write(subrangeA);
-            channels[i].write(subrangeB);
+            channels[i].write(new Interval(subrangeA, subrangeB));
         }
 
         System.out.println("Waiting for result...");
