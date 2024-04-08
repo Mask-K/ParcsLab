@@ -8,7 +8,7 @@ public class IntegralCalc implements AM {
         Interval interval = (Interval)info.parent.readObject();
         double a = interval.a;
         double b = interval.b;
-        int n = 1000000000 / 100000;
+        int n = 1000000000 / interval.n;
 
         double h = (b - a) / n;
 

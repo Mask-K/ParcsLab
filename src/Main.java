@@ -8,7 +8,7 @@ public class Main {
         AMInfo info = new AMInfo(curtask, null);
         double a = 0;
         double b = 10;
-        int numPoints = 100000;
+        int numPoints = 6;
         double step = (b - a) / numPoints;
 
         point[] points = new point[numPoints];
@@ -20,9 +20,9 @@ public class Main {
 
             double subrangeA = a + i * step;
             double subrangeB = subrangeA + step;
-            
+
             points[i].execute("IntegralCalc");
-            channels[i].write(new Interval(subrangeA, subrangeB));
+            channels[i].write(new Interval(subrangeA, subrangeB, numPoints));
         }
 
         System.out.println("Waiting for result...");
